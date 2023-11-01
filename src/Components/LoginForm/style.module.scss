@@ -1,0 +1,105 @@
+$width-input: 400px;
+$height-input: 30px;
+$agree-input: 500px;
+$background-color: #a764ae;
+$color: white;
+$position: center;
+$font-size-agree: 0.75rem;
+$border-radius: 10px;
+
+%flex-contaeiner {
+  display: flex;
+  justify-content: $position;
+}
+body {
+  @extend %flex-contaeiner;
+  align-items: $position;
+  color: $color;
+  height: 100vh;
+  background-color: aquamarine;
+  article {
+    @extend %flex-contaeiner;
+    flex-direction: column;
+    padding: 50px;
+    border-radius: $border-radius * 2;
+    width: 500px;
+    height: 400px;
+    box-shadow: 0 10px 50px black;
+    background-color: $background-color;
+    h1 {
+      // margin-top: -15px;
+      text-align: $position;
+      font-size: 2rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: $position;
+    }
+    label {
+      margin-top: 20px;
+    }
+    input {
+      width: $width-input;
+      height: $height-input;
+      border-radius: $border-radius;
+      border: none;
+      font-size: 1.25rem;
+    }
+    .userAgree {
+      padding-top: 20px;
+      display: flex;
+      width: $agree-input;
+      justify-content: $position;
+      align-items: $position;
+      font-size: $font-size-agree;
+      line-height: 1;
+      gap: 20px;
+      input {
+        max-width: 20px;
+      }
+      p {
+        max-width: 200px;
+      }
+    }
+    button {
+      background-color: $color;
+      border: none;
+      width: $width-input/2;
+      height: $height-input * 1.5;
+      border-radius: $border-radius - 5;
+      margin-top: 10px;
+      transition: all ease 100ms;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+.valid {
+  border: 4px solid;
+  border-color: green;
+}
+.invalid {
+  border: 4px solid;
+  border-color: red;
+}
+.icon {
+  color: black;
+  position: absolute;
+  right: 10px;
+  font-size: 1.5rem;
+}
+.passwordIcon {
+  display: inline;
+}
+.passwordIconHidden {
+  display: none;
+}
+.passwordField {
+  position: relative;
+  display: flex;
+  align-items: $position;
+  justify-content: $position;
+  gap: 10px;
+}
